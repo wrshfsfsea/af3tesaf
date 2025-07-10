@@ -2100,15 +2100,17 @@ function Tab:CreateButton(ButtonSettings)
 
 	local Button = Elements.Template.Button:Clone()
 	Button.Name = ButtonSettings.Name
-	Button.Title.Text = ButtonSettings.Name
+	Button.Title.Text = "" -- Buton yazısını gizler
 	Button.Visible = true
 	Button.Parent = TabPage
 
-	local IconData = getIcon("mouse-pointer-2")
-	Button.ElementIndicator.Image = "rbxassetid://" .. IconData.id
-	Button.ElementIndicator.ImageRectOffset = IconData.imageRectOffset
-	Button.ElementIndicator.ImageRectSize = IconData.imageRectSize
+	-- Lucide ikon: mouse-pointer-2
+	local iconData = getIcon("mouse-pointer-2")
+	Button.ElementIndicator.Image = "rbxassetid://" .. iconData.id
+	Button.ElementIndicator.ImageRectOffset = iconData.imageRectOffset
+	Button.ElementIndicator.ImageRectSize = iconData.imageRectSize
 	Button.ElementIndicator.ImageTransparency = 0
+	Button.ElementIndicator.BackgroundTransparency = 1
 
 	Button.BackgroundTransparency = 1
 	Button.UIStroke.Transparency = 1
