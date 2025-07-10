@@ -710,7 +710,6 @@ elseif not useStudio then
 	end
 end
 
-
 local minSize = Vector2.new(1024, 768)
 local useMobileSizing
 
@@ -721,6 +720,33 @@ end
 if UserInputService.TouchEnabled then
 	useMobilePrompt = true
 end
+
+-- ***** Buraya logo ve yazı ekleniyor *****
+
+-- Logoyu oluştur
+local logo = Instance.new("ImageLabel")
+logo.Name = "CustomLogo"
+logo.Image = "rbxassetid://111948936017808" -- Senin logo asset ID
+logo.Size = UDim2.new(0, 80, 0, 80) -- 80x80 px
+logo.Position = UDim2.new(0, 15, 0, 15) -- Sol üstten biraz içeri
+logo.BackgroundTransparency = 1
+logo.ZIndex = 10
+logo.Parent = Rayfield
+
+-- Script 2.0 yazısı
+local versionText = Instance.new("TextLabel")
+versionText.Name = "VersionText"
+versionText.Text = "Script 2.0"
+versionText.Font = Enum.Font.SourceSansBold
+versionText.TextSize = 28
+versionText.TextColor3 = Color3.fromRGB(255, 255, 255) -- Beyaz renk
+versionText.BackgroundTransparency = 1
+versionText.Position = UDim2.new(0, 110, 0, 35) -- Logonun sağında biraz aşağıda hizalı
+versionText.Size = UDim2.new(0, 120, 0, 40)
+versionText.ZIndex = 10
+versionText.Parent = Rayfield
+
+-- İstersen font ve renklerle oynayabilirsin.
 
 
 -- Object Variables
